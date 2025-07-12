@@ -1,11 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" href="images/icon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <title>個人網頁</title>
 </head>
 <body>
-    
+    <header>
+    <h1>個人網頁</h1>
+    <nav>
+    <ul>
+        <li><a href="#project">專案成就</a></li>
+        <li><a href="#Portfolio">作品集</a></li>
+        <li><a href="#">證照</a></li>
+        <li><a href="#">技能</a></li>
+        <li><a href="#">關於我</a></li>
+    </ul>
+    </nav>
+    </header>
+
+    <main>
+        <section class="index">
+            <h2>個人網頁</h2>
+            <p><strong>"學習永無止境，唯有持續進步才能超越自己"</strong></p>
+        </section>
+
+        <section id="project">
+            <img src="images/專題製作.jpg" alt="專題">
+            <div class="text">
+            <h2>專案成就</h2>
+            <h3>畢業專題-智能辨識存錢筒(2024/3~2025/3)</h3>
+            <p>1.使用 Jetson Nano 作為邊緣運算平台，開發即時影像辨識功能。<br>
+            2.蒐集與標註台幣與日幣硬幣資料，並以 YOLOv5 + PyTorch 完成影像辨識模型訓練。<br>
+            3.應用 OpenCV 進行影像前處理，提升辨識效率與準確率。<br>
+            4.利用 CUDA/cuDNN 加速 GPU 推論效能，實現低延遲即時辨識。<br>
+            5.串接 Firebase，實現辨識結果即時上傳與 App 同步功能。<br>
+            6.控制伺服馬達，設計硬幣投入開關機構，提升互動體驗。<br>
+            <a href="images/專題製作.jpg">更多介紹</a>
+            </p>
+            </div>
+        </section>
+
+        <section id="Portfolio">
+            <h2>作品集</h2>
+            <div class="Portfolio-container container">
+    <div class="Portfolio-type">
+      <div class="img-container">
+        <img src="images/dog.png" alt="課堂網頁製作" />
+        <div class="img-content">
+          <h3>毛小孩星球網站<br>(課堂期末)</h3>
+          <a href="https://jennyyyyyyyyyy.github.io/Jennyyyyyyyyyy/dog/index.html" class="btn btn-primary" target="blank">瞭解更多</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="Portfolio-type">
+      <div class="img-container">
+        <img src="images/課堂網頁.png" alt="課堂網頁" />
+        <div class="img-content">
+          <h3>課堂網頁練習</h3>
+          <a href="https://jennyyyyyyyyyy.github.io/Jennyyyyyyyyyy/" class="btn btn-primary" target="blank">瞭解更多</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="Portfolio-type">
+      <div class="img-container">
+        <img src="images/figma.png" alt="figma自學" />
+        <div class="img-content">
+          <h3>註冊／登入頁面 UI 設計｜Figma<br>(自學作品)</h3>
+          <a href="https://reurl.cc/Rk6dlZ" class="btn btn-primary" target="blank">瞭解更多</a>
+        </div>
+      </div>
+    </div>
+</section>
+    </main>
 </body>
 </html>
