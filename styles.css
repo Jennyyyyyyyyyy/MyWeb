@@ -1,3 +1,4 @@
+/*(全域)將所有 HTML 元素的內距 (padding) 和外距 (margin) 重設為 0，方便後續統一設計，不會受到瀏覽器預設樣式影響。*/
 * {
     padding:0;
     margin:0;
@@ -5,40 +6,40 @@
 
 /*首頁*/
 header {
-    height:80px;
-    width:100%;
-    position:fixed;  
-    z-index: 1000;  
+    height:80px; /*header 高度為 80px*/
+    width:100%;  /*讓 header 寬度滿版*/
+    position:fixed;  /*固定在畫面最上方，不會因滾動而消失*/
+    z-index: 1000;  /*讓 header 優先顯示在其他元素之上*/
 }
 
-/*icon*/
+/*icon(logo)*/
 h1 {
-    color:white;
-    position:absolute;
-    left:120px;
-    top:0;
-    line-height: 45px;
-    background-image:url(images/icon.ico) ;
-    background-position: center;
-    width:50px;
-    text-indent: -9999px;  
+    color:white; 
+    position:absolute; /*絕對位置*/
+    left:120px; /*往左120px*/
+    top:0; 
+    line-height: 45px; 
+    background-image:url(images/icon.ico) ; 
+    background-position: center; /*header 高度為 80px*/
+    width:50px; 
+    text-indent: -9999px;   /*把文字推出畫面外，只保留圖片*/
 }
 
 /*導航列*/
 nav{
-    background-color: #ffffff;
-    text-align:right;
+    background-color: #ffffff; /*背景顏色白色*/
+    text-align:right; /*內容靠右*/
 }
 
 nav ul{
-    margin: 0px;
+    margin: 0px; /*去除外距*/
 }
 
-nav li{
-    list-style-type: none;
+nav li{ /*改為水平排列，且移除前方黑點（清單符號)*/
+    list-style-type: none; 
     display:inline-block;
 }
-nav li a{
+nav li a{  /*導覽按鈕樣式：黑字、無底線，滑鼠移上變深藍色。*/
     display: block;
     text-decoration: none;
     padding: 15px;
@@ -49,7 +50,7 @@ nav li a:hover{
 }
 
 /*關於我*/
-#about {
+#about { /*設定淺藍背景與上下左右留白*/
   background-color:	#C4E1FF;
   padding: 80px 20px;
 }
@@ -57,22 +58,23 @@ nav li a:hover{
 .about-container {
   max-width: 1000px;
   margin: 0 auto;
-  display: flex;
+  display: flex; /*橫向排列圖片與文字*/
   align-items: center;
   justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap; /* RWD 支援 */
+  gap: 40px; /*圖片與文字間距*/
+  flex-wrap: wrap; /* 小螢幕時會自動換行 */
 }
 
 .about-img img {
   width: 300px;
   height: 400px;
   border-radius: 50%;
-  object-fit: cover;
+  object-fit: cover; /*圓形頭像， 讓圖片填滿區塊不變形*/
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.about-text {
+/*設定標題字體大小、段落間距、文字對齊為左*/
+.about-text { 
   max-width: 500px;
   text-align: left;
 }
@@ -97,7 +99,7 @@ nav li a:hover{
 
 /*作品集*/
 #Portfolio {
-    padding: 5rem 0 10rem 0;
+    padding: 5rem 0 10rem 0; /*上下留白、背景白色*/
     background-color:#fff;
 }
 
@@ -109,7 +111,7 @@ nav li a:hover{
 }
 
 .Portfolio-container {
-    display: flex;
+    display: flex; /*排列作品圖片，可自動換行*/
     justify-content: center;
     gap: 2rem;
     flex-wrap: wrap; /* 可選：讓圖片在小螢幕換行 */
@@ -146,6 +148,7 @@ nav li a:hover{
     font-size: 20px;
 }
 
+/*外層容器，內部設定 hover 效果*/
 .img-container::after {
     content: "";
     display: block;
@@ -187,6 +190,7 @@ nav li a:hover{
   color: #333;
 }
 
+/*使用 Grid 排列 3 欄，整齊呈現卡片*/
 .cert-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* ✅ 固定3欄 */
@@ -195,6 +199,7 @@ nav li a:hover{
   margin: 0 auto;
 }
 
+/*白色卡片、圓角、有陰影。滑鼠移上時會有上浮動畫*/
 .cert-card {
   background-color: white;
   border-radius: 10px;
@@ -220,6 +225,7 @@ nav li a:hover{
 }
 
 /*技能*/
+/*設定背景色、最大寬度與上下留白*/
 #skills {
   background: #fefcf9;
   padding: 60px 20px;
@@ -259,20 +265,6 @@ nav li a:hover{
   color: #333;
 }
 
-.progress-bar {
-  background: #e0e0e0;
-  height: 8px;
-  border-radius: 20px;
-  overflow: hidden;
-}
-
-.progress {
-  height: 100%;
-  background-color: #2ebaae;
-  border-radius: 20px;
-  transition: width 0.5s ease-in-out;
-}
-
 /*專案成就*/
 #project {
   display: flex;
@@ -282,7 +274,7 @@ nav li a:hover{
   padding: 60px 20px;
   flex-wrap: wrap;               /* 螢幕小時會自動換行 */
   background-color:	#C4E1FF;     /* 背景色 */
-  height: 100vh;
+  height: 100vh;                   /*高度佔滿整個視窗*/
 }
 
 #project img {
@@ -319,7 +311,7 @@ nav li a:hover{
 /*頁尾*/
 footer {
     background-color:#000000;
-    color:#B7B7B7;
+    color:#ffffff;
     height:60px;
     display:flex;
     justify-content: center;
