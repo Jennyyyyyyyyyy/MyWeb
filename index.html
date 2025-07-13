@@ -9,48 +9,42 @@
 </head>
 <body>
     <header>
-    <h1>個人網頁</h1>
+    <h1>icon</h1>
     <nav>
     <ul>
-        <li><a href="#project">專案成就</a></li>
+        <li><a href="#about">關於我</a></li>
         <li><a href="#Portfolio">作品集</a></li>
-        <li><a href="#">證照</a></li>
-        <li><a href="#">技能</a></li>
-        <li><a href="#">關於我</a></li>
+        <li><a href="#certificates">證照</a></li>
+        <li><a href="#skills">技能</a></li>
+        <li><a href="#project">專案成就</a></li>
     </ul>
     </nav>
     </header>
 
     <main>
-        <section class="index">
-            <h2>個人網頁</h2>
-            <p><strong>"學習永無止境，唯有持續進步才能超越自己"</strong></p>
-        </section>
+      <section id="about">
+  <div class="about-container">
+    <div class="about-img">
+      <img src="images/個人照.jpg" alt="個人照片">
+    </div>
+    <div class="about-text">
+      <h3>Helo 我叫林孝臻</h3>
+      <p>
+      我對網頁設計充滿興趣，具備 HTML 和 CSS 的基礎，<br>
+      喜歡在空閒時間學習新工具與相關知識，不斷探索與進步中。
+      </p>
+    </div>
+  </div>
+</section>
 
-        <section id="project">
-            <img src="images/專題製作.jpg" alt="專題">
-            <div class="text">
-            <h2>專案成就</h2>
-            <h3>畢業專題-智能辨識存錢筒(2024/3~2025/3)</h3>
-            <p>1.使用 Jetson Nano 作為邊緣運算平台，開發即時影像辨識功能。<br>
-            2.蒐集與標註台幣與日幣硬幣資料，並以 YOLOv5 + PyTorch 完成影像辨識模型訓練。<br>
-            3.應用 OpenCV 進行影像前處理，提升辨識效率與準確率。<br>
-            4.利用 CUDA/cuDNN 加速 GPU 推論效能，實現低延遲即時辨識。<br>
-            5.串接 Firebase，實現辨識結果即時上傳與 App 同步功能。<br>
-            6.控制伺服馬達，設計硬幣投入開關機構，提升互動體驗。<br>
-            <a href="images/專題製作.jpg">更多介紹</a>
-            </p>
-            </div>
-        </section>
-
-        <section id="Portfolio">
-            <h2>作品集</h2>
-            <div class="Portfolio-container container">
+<section id="Portfolio">
+    <h2>作品集</h2>
+    <div class="Portfolio-container container">
     <div class="Portfolio-type">
       <div class="img-container">
         <img src="images/dog.png" alt="課堂網頁製作" />
         <div class="img-content">
-          <h3>毛小孩星球網站<br>(課堂期末)</h3>
+          <h3>毛小孩星球網站(課堂期末)</h3>
           <a href="https://jennyyyyyyyyyy.github.io/Jennyyyyyyyyyy/dog/index.html" class="btn btn-primary" target="blank">瞭解更多</a>
         </div>
       </div>
@@ -76,6 +70,66 @@
       </div>
     </div>
 </section>
-    </main>
+
+<section id="certificates">
+  <h2>證照</h2>
+  <div class="cert-grid">
+    <div class="cert-card"><img src="images/丙級.jpg" alt="證照1"><p>丙級</p></div>
+    <div class="cert-card"><img src="images/網丙.jpg" alt="證照2"><p>網丙</p></div>
+    <div class="cert-card"><img src="images/乙級.jpg" alt="證照3"><p>乙級</p></div>
+    <div class="cert-card"><img src="images/excel.jpg" alt="證照4"><p>excel</p></div>
+    <div class="cert-card"><img src="images/中打.jpg" alt="證照5"><p>中打</p></div>
+    <div class="cert-card"><img src="images/英打.jpg" alt="證照6"><p>英打</p></div>
+    <div class="cert-card"><img src="images/python.jpg" alt="證照7"><p>pytgon</p></div>
+    <div class="cert-card"><img src="images/SSE.jpg" alt="證照8"><p>SEE</p></div>
+    <div class="cert-card"><img src="images/Azure.jpg" alt="證照9"><p>Azure</p></div>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>技能</h2>
+  
+  <div class="skills-group">
+    <h3>辦公應用</h3>
+    <ul>
+      <li><strong>Excel：</strong>熟悉基本函數、樞紐分析與圖表製作，能應用於資料整理與簡易分析。</li>
+      <li><strong>PowerPoint / Canva：</strong>熟悉基本簡報製作，習慣使用 Canva 設計版面，提升視覺呈現效果。</li>
+      <li><strong>Word：</strong>具備基本文書處理能力，過去工讀與課堂報告時使用經驗。</li>
+      <li><strong>中文打字：</strong>每分鐘 35 字</li>
+      <li><strong>英文打字：</strong>每分鐘 18 字</li>
+    </ul>
+  </div>
+
+  <div class="skills-group">
+    <h3>程式類</h3>
+    <ul>
+      <li><strong>Python：</strong>熟悉基本語法（如變數、條件判斷、迴圈等）</li>
+      <li><strong>HTML：</strong>具備中等程度，熟悉基礎結構與部分進階語法（如表單、表格、內嵌內容等）</li>
+      <li><strong>CSS：</strong>具備基本語法，能進行簡單排版與樣式設定</li>
+      <li><strong>VS Code：</strong>使用 HTML/CSS 進行網頁編輯，有完整網站製作經驗</li>
+      <li><strong>Figma：</strong>具備中等操作能力，可進行簡單 UI 介面設計與互動原型製作</li>
+    </ul>
+  </div>
+</section>
+
+<section id="project">
+     <img src="images/專題製作.jpg" alt="專題">
+     <div class="text">
+      <h2>專案成就</h2>
+      <h3>畢業專題-智能辨識存錢筒(2024/3~2025/3)</h3>
+    <p>1.使用 Jetson Nano 作為邊緣運算平台，開發即時影像辨識功能。<br>
+       2.蒐集與標註台幣與日幣硬幣資料，並以 YOLOv5 + PyTorch 完成影像辨識模型訓練。<br>
+       3.應用 OpenCV 進行影像前處理，提升辨識效率與準確率。<br>
+       4.利用 CUDA/cuDNN 加速 GPU 推論效能，實現低延遲即時辨識。<br>
+       5.串接 Firebase，實現辨識結果即時上傳與 App 同步功能。<br>
+       6.控制伺服馬達，設計硬幣投入開關機構，提升互動體驗。<br>
+      <a href="images/專題製作.jpg">更多介紹</a>
+   </p>
+  </div>
+</section>
+      <footer>
+        <p>Copyright © 2025 個人網頁 All Rights Reserved.</p>
+    </footer>
+  </main>
 </body>
 </html>
