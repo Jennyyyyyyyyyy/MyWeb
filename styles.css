@@ -1,373 +1,778 @@
-/*(全域)將所有 HTML 元素的內距 (padding) 和外距 (margin) 重設為 0，方便後續統一設計，不會受到瀏覽器預設樣式影響。*/
+/* ==========================================
+   通用基礎設定
+   ========================================== */
 * {
-    padding:0;
-    margin:0;
+  box-sizing: border-box;
 }
 
-/*首頁*/
-header {
-    height:80px; /*header 高度為 80px*/
-    width:100%;  /*讓 header 寬度滿版*/
-    position:fixed;  /*固定在畫面最上方，不會因滾動而消失*/
-    z-index: 1000;  /*讓 header 優先顯示在其他元素之上*/
+html {
+  scroll-behavior: smooth;
 }
 
-/*icon(logo)*/
-h1 {
-    color:white; 
-    position:absolute; /*絕對位置*/
-    left:120px; /*往左120px*/
-    top:0; 
-    line-height: 45px; 
-    background-image:url(images/icon.ico) ; 
-    background-position: center; /*header 高度為 80px*/
-    width:50px; 
-    text-indent: -9999px;   /*把文字推出畫面外，只保留圖片*/
+body {
+  margin: 0;
+  background-color: #E9EBE4;
+  color: #1C2A23;
+  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  font-size: 16px;
+  line-height: 1.85;
 }
 
-/*導航列*/
-nav{
-    background-color: #ffffff; /*背景顏色白色*/
-    text-align:right; /*內容靠右*/
+img {
+  max-width: 100%;
+  display: block;
 }
 
-nav ul{
-    margin: 0px; /*去除外距*/
+a {
+  color: inherit;
 }
 
-nav li{ /*改為水平排列，且移除前方黑點（清單符號)*/
-    list-style-type: none; 
-    display:inline-block;
-}
-nav li a{  /*導覽按鈕樣式：黑字、無底線，滑鼠移上變深藍色。*/
-    display: block;
-    text-decoration: none;
-    padding: 15px;
-    color: #000;
-}
-nav li a:hover{
-    color: rgb(17, 40, 100);
+:focus-visible {
+  outline: 2px solid #3A6B57;
+  outline-offset: 3px;
+  border-radius: 2px;
 }
 
-/*關於我*/
-#about { /*設定淺藍背景與上下左右留白*/
-  background-color:	#C4E1FF;
-  padding: 80px 20px;
+/* 深色模式設定 */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #141916;
+    color: #E7EAE4;
+  }
 }
 
-.about-container {
-  max-width: 1000px;
+/* ==========================================
+   左側導覽列 (Rail)
+   ========================================== */
+.rail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 232px;
+  padding: 44px 28px;
+  border-right: 1px solid #CFD5C9;
+  background-color: #E9EBE4;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .rail {
+    background-color: #141916;
+    border-right-color: #2C342E;
+  }
+}
+
+.rail .sig {
+  font-family: "Noto Serif TC", serif;
+  font-size: 22px;
+  line-height: 1.3;
+  letter-spacing: 0.06em;
+}
+
+.rail .sig span {
+  display: block;
+  font-family: inherit;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  color: #828E84;
+  margin-top: 6px;
+  font-weight: normal;
+}
+
+.rail nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.rail nav a {
+  text-decoration: none;
+  color: #4E5C53;
+  padding: 7px 0;
+  font-size: 15px;
+  border-bottom: 1px solid transparent;
+  width: fit-content;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+@media (prefers-color-scheme: dark) {
+  .rail nav a {
+    color: #AEB8AF;
+  }
+}
+
+.rail nav a:hover {
+  color: #3A6B57;
+  border-bottom-color: #3A6B57;
+}
+
+.rail .foot {
+  margin-top: auto;
+  font-size: 12px;
+  color: #828E84;
+  line-height: 1.7;
+}
+
+/* ==========================================
+   主要內容容器
+   ========================================== */
+.wrap {
+  margin-left: 232px;
+  padding: 0 48px;
+  overflow-x: hidden;
+}
+
+.inner {
+  max-width: 880px;
   margin: 0 auto;
-  display: flex; /*橫向排列圖片與文字*/
+}
+
+/* ==========================================
+   區塊共用樣式 (Section)
+   ========================================== */
+.sec {
+  padding: 76px 0;
+  border-top: 1px solid #CFD5C9;
+}
+
+@media (prefers-color-scheme: dark) {
+  .sec {
+    border-top-color: #2C342E;
+  }
+}
+
+.sec:first-of-type {
+  border-top: none;
+}
+
+.sec-head {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.sec-head h2 {
+  font-family: "Noto Serif TC", serif;
+  font-size: 27px;
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+
+.sec-head p {
+  margin: 0;
+  font-size: 13px;
+  color: #828E84;
+}
+
+.prose {
+  max-width: 500px;
+  color: #4E5C53;
+}
+
+@media (prefers-color-scheme: dark) {
+  .prose {
+    color: #AEB8AF;
+  }
+}
+
+/* ==========================================
+   Hero 首頁主視覺
+   ========================================== */
+.hero {
+  display: flex;
+  gap: 48px;
+  align-items: center;
+  padding: 80px 0 76px;
+}
+
+.hero > div:first-child {
+  flex: 1;
+}
+
+.hero h1 {
+  font-family: "Noto Serif TC", serif;
+  font-size: 52px;
+  line-height: 1.1;
+  margin: 0 0 4px;
+  letter-spacing: 0.04em;
+}
+
+.hero .en {
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  color: #B4860F;
+  margin: 0 0 26px;
+}
+
+.hero p.lead {
+  margin: 0 0 30px;
+  max-width: 400px;
+  color: #4E5C53;
+}
+
+@media (prefers-color-scheme: dark) {
+  .hero p.lead {
+    color: #AEB8AF;
+  }
+}
+
+.cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.cta a {
+  text-decoration: none;
+  font-size: 15px;
+  padding: 11px 22px;
+  border-radius: 50px;
+  border: 1px solid #1C2A23;
+  transition: background 0.15s, color 0.15s;
+}
+
+.cta a.solid {
+  background-color: #1C2A23;
+  color: #E9EBE4;
+}
+
+.cta a.solid:hover {
+  background-color: #3A6B57;
+  border-color: #3A6B57;
+}
+
+.cta a.ghost:hover {
+  background-color: #6a6a66;
+}
+
+/* 1. 修改：個人照片尺寸調整適中 */
+.portrait {
+  position: relative;
+  width: 240px;            /* 設定適中的寬度 */
+  flex-shrink: 0;
+}
+
+.portrait .ph {
+  border-radius: 140px 140px 14px 14px;
+  overflow: hidden;
+  height: 310px;           /* 設定適中的高度 */
+  border: 1px solid #CFD5C9;
+}
+
+.portrait::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: -10px;
+  bottom: -10px;
+  left: 10px;
+  z-index: -1;
+  border: 1px solid #B4860F;
+  border-radius: 140px 140px 14px 14px;
+}
+
+/* 圖片容器與載入失敗備用 */
+.ph {
+  position: relative;
+  background-color: #FAFAF7;
+}
+
+@media (prefers-color-scheme: dark) {
+  .ph {
+    background-color: #1C221E;
+  }
+}
+
+.ph img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ph[data-fail="1"] img {
+  display: none;
+}
+
+.ph[data-fail="1"]::before {
+  content: attr(data-label);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 40px; /*圖片與文字間距*/
-  flex-wrap: wrap; /* 小螢幕時會自動換行 */
-}
-
-.about-img img {
-  width: 300px;
-  height: 400px;
-  border-radius: 50%;
-  object-fit: cover; /*圓形頭像， 讓圖片填滿區塊不變形*/
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-/*設定標題字體大小、段落間距、文字對齊為左*/
-.about-text { 
-  max-width: 500px;
-  text-align: left;
-}
-
-.about-text h1 {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.about-text h3 {
-  font-size: 1.4rem;
-  margin-bottom: 10px;
-  color: #333;
-}
-
-.about-text p {
-  font-size: 16px;
-  line-height: 1.8;
-  margin-bottom: 30px;
-}
-
-/*作品集*/
-#Portfolio {
-    padding: 5rem 0 10rem 0; /*上下留白、背景白色*/
-    background-color:#fff;
-}
-
-#Portfolio h2 {
   text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  color: #222;
+  padding: 12px;
+  font-size: 12px;
+  color: #828E84;
 }
 
-.Portfolio-container {
-    display: flex; /*排列作品圖片，可自動換行*/
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap; /* 可選：讓圖片在小螢幕換行 */
+/* ==========================================
+   2. 修改：作品集 (Portfolio) 完整顯示與 RWD
+   ========================================== */
+.work {
+  display: flex;
+  gap: 32px;
+  padding: 30px 0;
+  border-bottom: 1px solid #CFD5C9;
+  align-items: center;
 }
 
-.Portfolio-container img {
-    display: block;
-    width: 100%;
-    margin: auto;
-    max-height: 300px;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 20px; /* ✅ 加上圓角，可自訂數值 */
+@media (prefers-color-scheme: dark) {
+  .work {
+    border-bottom-color: #2C342E;
+  }
 }
 
-.img-container {
-    margin: 0 1rem;
-    position: relative;
+.work:last-child {
+  border-bottom: none;
 }
 
-.img-content {
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    z-index: 2;
-    text-align: center;
-    transition: all 0.3s ease-in-out 0.1s;
-}
-
-.img-content h3 {
-    color: #fff;
-    font-size: 20px;
-}
-
-/*外層容器，內部設定 hover 效果*/
-.img-container::after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.871);
-    opacity: 0;
-    z-index: 1;
-
-    transform: scaleY(0);
-    transform-origin: 100% 100%;
-    transition: all 0.3s ease-in-out;
-    border-radius: 20px; /*加上圓角 */
-}
-
-.img-container:hover::after {
-    opacity: 1;
-    transform: scaleY(1);
-}
-
-.img-container:hover .img-content {
-    opacity: 1;
-    top: 40%;
-}
-
-/*證照*/
-#certificates {
-  padding: 60px 20px;
-  background-color:	#C4E1FF;
-  text-align: center;
-}
-
-#certificates h2 {
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  color: #333;
-}
-
-/*使用 Grid 排列 3 欄，整齊呈現卡片*/
-.cert-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* ✅ 固定3欄 */
-  gap: 20px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-/*白色卡片、圓角、有陰影。滑鼠移上時會有上浮動畫*/
-.cert-card {
-  background-color: white;
+/* 外框容器 */
+.work .ph {
+  width: 320px;
+  height: 200px;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  padding: 15px;
-  transition: transform 0.2s ease;
+  overflow: hidden;
+  border: 1px solid #CFD5C9;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FAFAF7;
 }
 
-.cert-card:hover {
-  transform: translateY(-5px);
-}
-
-.cert-card img {
+/* 讓作品圖片完整顯示（不裁切） */
+.work .ph img {
   width: 100%;
-  height: auto;
-  border-radius: 6px;
+  height: 100%;
+  object-fit: contain;     /* 關鍵：完整呈現畫面不被裁剪 */
 }
 
-.cert-card p {
-  margin-top: 10px;
-  font-size: 16px;
-  color: #444;
+.work > div:last-child {
+  flex: 1;
 }
 
-/*技能*/
-/*設定背景色、最大寬度與上下留白*/
-#skills {
-  background: #fefcf9;
-  padding: 60px 20px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-#skills h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  color: #222;
-}
-
-.skills-group {
-  margin-bottom: 50px;
-}
-
-.skills-group h3 {
-  font-size: 1.6rem;
-  color: #2b2b2b;
-  margin-bottom: 20px;
-  border-left: 5px solid #2ebaae;
-  padding-left: 10px;
-}
-
-.skill {
-  margin-bottom: 20px;
-}
-
-.skill-title {
-  display: flex;
-  justify-content: space-between;
-  font-size: 16px;
-  font-weight: 500;
-  margin-bottom: 6px;
-  color: #333;
-}
-
-/*專案成就*/
-#project {
-  display: flex;
-  justify-content: center;       /* 水平置中 */
-  align-items: center;           /* 垂直置中 */
-  gap: 60px;                     /* 圖片與文字的間距 */
-  padding: 60px 20px;
-  flex-wrap: wrap;               /* 螢幕小時會自動換行 */
-  background-color:	#C4E1FF;     /* 背景色 */
-  height: 100vh;                   /*高度佔滿整個視窗*/
-}
-
-#project img {
-  width: 400px;                  /* 限制圖片寬度 */
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.text {
-  max-width: 600px;
-  text-align: left;
-}
-
-.project h2 {
-  font-size: 32px;
-  margin-bottom: 10px;
+.work h3 {
+  font-size: 19px;
+  margin: 0 0 8px;
   font-weight: bold;
 }
 
-.text h3 {
-  font-size: 20px;
-  margin-bottom: 15px;
-  color: #000;
+.work p {
+  margin: 0 0 14px;
+  color: #829087;
+  font-size: 15px;
+  max-width: 480px;
 }
 
-.text p {
-  line-height: 1.8;
+.work .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 0 0 16px;
+  padding: 0;
+  list-style: none;
+}
+
+.work .tags li {
+  font-size: 12px;
+  color: #3A6B57;
+  border: 1px solid #CFD5C9;
+  border-radius: 50px;
+  padding: 3px 11px;
+}
+
+.more {
+  text-decoration: none;
+  font-size: 15px;
+  color: #3A6B57;
+  border-bottom: 1px solid #3A6B57;
+  padding-bottom: 2px;
+}
+
+/* ==========================================
+   技能 (Skills)
+   ========================================== */
+.skills {
+  display: flex;
+  gap: 44px;
+}
+
+.skills > div {
+  flex: 1;
+}
+
+.skills h3 {
   font-size: 16px;
-  color: #000;
+  margin: 0 0 4px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #CFD5C9;
 }
 
-/*頁尾*/
+.skills ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.skills li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 0;
+  border-bottom: 1px solid #CFD5C9;
+}
+
+.skills .name {
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.skills .desc {
+  width: 100%;
+  font-size: 13px;
+  color: #828E84;
+  line-height: 1.65;
+  margin-top: 4px;
+}
+
+.dots {
+  display: flex;
+  gap: 5px;
+}
+
+.dots i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: 1px solid #3A6B57;
+}
+
+.dots i.on {
+  background-color: #3A6B57;
+}
+
+.legend {
+  font-size: 12px;
+  color: #828E84;
+  margin: 22px 0 0;
+}
+
+/* ==========================================
+   證照 (Certificates)
+   ========================================== */
+.certs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.cert {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+  width: calc(25% - 12px);
+}
+
+.cert .ph {
+  height: 120px;
+  border: 1px solid #CFD5C9;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #FAFAF7;
+}
+
+.cert .ph img {
+  object-fit: contain;
+  background-color: #FAFAF7;
+}
+
+.cert span {
+  display: block;
+  font-size: 13px;
+  margin-top: 9px;
+  color: #829087
+  ;
+}
+
+.cert:hover .ph {
+  border-color: #B4860F;
+}
+
+/* ==========================================
+   專案 (Project)
+   ========================================== */
+.proj {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+.proj .ph {
+  width: 318px;
+  height: 413px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.proj .ph img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.proj > div:last-child {
+  flex: 1;
+}
+
+.proj h3 {
+  font-size: 20px;
+  margin: 0 0 6px;
+}
+
+.proj .when {
+  font-size: 13px;
+  color: #829087;
+  margin: 0 0 18px;
+}
+
+.proj ol {
+  margin: 0 0 20px;
+  padding-left: 20px;
+  color: #91a096;
+  font-size: 15px;
+}
+
+.proj ol li {
+  margin-bottom: 9px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  list-style: none;
+  margin: 0 0 18px;
+  padding: 0;
+}
+
+.chips li {
+  font-size: 12px;
+  background-color: #1C2A23;
+  border: 1px solid #CFD5C9;
+  border-radius: 6px;
+  padding: 4px 10px;
+  color: #ffffff;
+}
+
+/* ==========================================
+   聯絡我與頁尾 (Contact & Footer)
+   ========================================== */
+.contact a.mail {
+  font-family: "Noto Serif TC", serif;
+  font-size: 20px;
+  text-decoration: none;
+  border-bottom: 2px solid #B4860F;
+  word-break: break-all;
+}
+
+.links {
+  display: flex;
+  gap: 22px;
+  margin-top: 26px;
+  font-size: 15px;
+  flex-wrap: wrap;
+}
+
 footer {
-    background-color:#000000;
-    color:#ffffff;
-    height:60px;
-    display:flex;
-    justify-content: center;
+  padding: 34px 0 60px;
+  font-size: 12px;
+  color: #828E84;
+  border-top: 1px solid #CFD5C9;
+}
+
+/* ==========================================
+   燈箱 (Dialog)
+   ========================================== */
+dialog.box {
+  border: none;
+  padding: 0;
+  background: transparent;
+  max-width: 820px;
+  width: 90%;
+}
+
+dialog.box .inner-box {
+  background-color: #FAFAF7;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+}
+
+dialog.box .ph {
+  max-height: 70vh;
+  border-radius: 6px;
+  overflow: hidden;
+  min-height: 180px;
+}
+
+dialog.box .ph img {
+  height: auto;
+  max-height: 70vh;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+dialog.box p {
+  margin: 12px 0 0;
+  font-size: 14px;
+  color: #4E5C53;
+}
+
+dialog.box button.close {
+  margin-top: 10px;
+  font-size: 13px;
+  background: none;
+  border: 1px solid #CFD5C9;
+  border-radius: 50px;
+  padding: 6px 18px;
+  cursor: pointer;
+  color: #1C2A23;
+}
+
+/* ==========================================
+   響應式設計 (RWD 媒體查詢)
+   ========================================== */
+
+/* ---------- 平板尺寸 (1099px 以下) ---------- */
+@media (max-width: 1099px) {
+  .rail {
+    position: relative;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
     align-items: center;
-    font-size: 14px;
+    gap: 20px;
+    padding: 10px 24px;
+    border-right: none;
+    border-bottom: 1px solid #CFD5C9;
+  }
+
+  .rail .sig span,
+  .rail .foot {
+    display: none;
+  }
+
+  .rail nav {
+    flex-direction: row;
+    gap: 18px;
+  }
+
+  .wrap {
+    margin-left: 0;
+    padding: 0 32px;
+  }
+
+  .hero {
+    flex-direction: column-reverse;
+    padding: 48px 0;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero p.lead {
+    max-width: 100%;
+  }
+
+  .cta {
+    justify-content: center;
+  }
+
+  /* 平板下作品集切換為上下單欄結構 */
+  .work {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .work .ph {
+    width: 100%;
+    height: 240px;
+  }
+
+  .proj {
+    flex-direction: column;
+  }
+
+  .proj .ph {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .skills {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .cert {
+    width: calc(33.33% - 12px);
+  }
 }
 
-/* 手機版 RWD */
-@media (max-width: 600px) {
-  .skill-title {
-    font-size: 15px;
-  }
-}
-
-@media (max-width: 768px) {
-  /* ICON位置調整 */
-  h1 {
-    left: 10px;
-    width: 40px;
-    height: 40px;
+/* ---------- 手機尺寸 (640px 以下) ---------- */
+@media (max-width: 640px) {
+  body {
+    font-size: 15.5px;
   }
 
-  /* 手機版調整 */
-  .about-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .about-text {
-    text-align: center;
-  }
-  
-
-  /* 專案區塊直向排列 */
-  #project {
-    flex-direction: column;
-    height: auto; /* ✅ 讓高度自適應內容 */
-    text-align: center;
-  }
-
-  #project img {
-    width: 90%;
-    max-width: 400px;
-    margin-bottom: 20px;
-  }
-
-  .text {
+  .wrap {
     padding: 0 20px;
   }
 
-  .text p {
-    font-size: 16px;
-    line-height: 1.7;
-    word-break: break-word; /* ✅ 避免超出 */
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .portrait {
+    width: 180px;
+  }
+
+  .portrait .ph {
+    height: 230px;
+  }
+
+  .portrait::after {
+    display: none;
+  }
+
+  /* 手機下作品集圖片彈性自適應 */
+  .work .ph {
+    width: 100%;
+    height: 180px;
+  }
+
+  .sec-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .cert {
+    width: calc(50% - 8px);
   }
 }
-
-
-
