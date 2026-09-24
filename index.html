@@ -1,18 +1,33 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>林孝臻｜個人網頁</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+  <!-- 設定字元編碼為 UTF-8，防止中文字顯示亂碼 -->
+  <meta charset="utf-8">
+  
+  <!-- 響應式網頁（RWD）設定：畫面寬度等於裝置寬度、初始縮放 100%、適應全螢幕/網頁瀏海區 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  
+  <!-- 瀏覽器分頁標題 -->
+  <title>林孝臻｜個人網頁</title>
+  
+  <!-- 預先連線至 Google 字型伺服器以加快載入速度 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- 引入 Google 思源黑體（Noto Sans TC）與思源宋體（Noto Serif TC） -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet">
+  
+  <!-- 引入外部 CSS 樣式表，用於版面與視覺設計 -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+<!-- 側邊導覽列（Rail / Sidebar） -->
 <aside class="rail">
+  <!-- 個人品牌 Logo 標誌區塊 -->
   <div class="sig">LXZ<span>PORTFOLIO 2026</span></div>
+  
+  <!-- 導覽連結：點擊時會平滑滾動至對應 id 區塊 -->
   <nav>
     <a href="#about">關於我</a>
     <a href="#works">作品集</a>
@@ -23,205 +38,334 @@
   </nav>
 </aside>
 
+<!-- 主內容容器 -->
 <div class="wrap">
-<div class="inner">
+  <div class="inner">
 
-  <!-- Hero -->
-  <header class="hero" id="about">
-    <div>
-      <h1>林孝臻</h1>
-      <p class="en">HSIAO-CHEN LIN</p>
-      <p class="lead">歡迎來到我的作品空間，這裡紀錄了我學習網頁排版與介面設計的點點滴滴，同時也整理了我一路累積的專業證照與技能歷程。</p>
-      <div class="cta">
-        <a class="solid" href="#works">看我的作品</a>
-        <a class="ghost" href="#contact">聯絡我</a>
-      </div>
-    </div>
-    <div class="portrait">
-      <div class="ph" data-label="個人照"><img src="images/個人照.jpg" alt="林孝臻的個人照片"></div>
-    </div>
-  </header>
-
-  <!-- 作品集 -->
-  <section class="sec" id="works">
-    <div class="sec-head"><h2>作品集</h2><p>3件</p></div>
-
-    <article class="work">
-      <div class="ph" data-label="毛小孩星球網站"><img src="images/dog.png" alt="毛小孩星球網站畫面"></div>
+    <!-- 1. Hero 簡介區塊（#about） -->
+    <header class="hero" id="about">
       <div>
-        <h3>毛小孩星球網站</h3>
-        <p>課堂期末作品。以寵物為主題的多頁式網站，練習導覽結構、圖文排版與響應式版面。</p>
-        <ul class="tags"><li>HTML</li><li>CSS</li><li>多頁式網站</li></ul>
-        <a class="more" href="https://jennyyyyyyyyyy.github.io/Jennyyyyyyyyyy/dog/index.html">瞭解更多</a>
+        <h1>林孝臻</h1>
+        <p class="en">HSIAO-CHEN LIN</p>
+        <p class="lead">歡迎來到我的作品空間，這裡紀錄了我學習網頁排版與介面設計的點點滴滴，同時也整理了我一路累積的專業證照與技能歷程。</p>
+        
+        <!-- 行動呼籲（CTA）按鈕組 -->
+        <div class="cta">
+          <a class="solid" href="#works">看我的作品</a>
+          <a class="ghost" href="#contact">聯絡我</a>
+        </div>
       </div>
-    </article>
-
-    <article class="work">
-      <div class="ph" data-label="課堂網頁練習"><img src="images/課堂網頁.png" alt="課堂網頁練習畫面"></div>
-      <div>
-        <h3>課堂網頁練習</h3>
-        <p>課堂中累積的練習集合，涵蓋表單、表格與基礎版面配置。</p>
-        <ul class="tags"><li>HTML</li><li>CSS</li><li>基礎練習</li></ul>
-        <a class="more" href="https://jennyyyyyyyyyy.github.io/Jennyyyyyyyyyy/">瞭解更多</a>
+      
+      <!-- 個人照片 display 容器；data-label 屬性供圖片讀取失敗時顯示文字 -->
+      <div class="portrait">
+        <div class="ph" data-label="個人照"><img src="images/個人照.jpg" alt="林孝臻的個人照片"></div>
       </div>
-    </article>
+    </header>
 
-    <article class="work">
-      <div class="ph" data-label="Figma UI 設計"><img src="images/figma.png" alt="註冊與登入頁面 UI 設計稿"></div>
-      <div>
-        <h3>註冊／登入頁面 UI 設計</h3>
-        <p>自學作品。以 Figma 製作註冊與登入流程的介面設計與互動原型。</p>
-        <ul class="tags"><li>Figma</li><li>UI 設計</li><li>互動原型</li></ul>
-        <a class="more" href="https://reurl.cc/Rk6dlZ">瞭解更多</a>
+    <!-- 2. 作品集區塊（#works） -->
+    <section class="sec" id="works">
+      <div class="sec-head"><h2>作品集</h2><p>3件</p></div>
+
+      <!-- 作品 1 -->
+      <article class="work">
+        <div class="ph" data-label="毛小孩星球網站"><img src="images/dog.png" alt="毛小孩星球網站畫面"></div>
+        <div>
+          <h3>毛小孩星球網站</h3>
+          <p>課堂期末作品。以寵物為主題的多頁式網站，練習導覽結構、圖文排版與響應式版面。</p>
+          <ul class="tags"><li>HTML</li><li>CSS</li><li>多頁式網站</li></ul>
+          <a class="more" href="https://jennyyyyyyyyyy.github.io/Jennyyyyyyyyyy/dog/index.html" target="_blank" rel="noopener noreferrer">瞭解更多</a>
+        </div>
+      </article>
+
+      <!-- 作品 2 -->
+      <article class="work">
+        <div class="ph" data-label="課堂網頁練習"><img src="images/課堂網頁.png" alt="課堂網頁練習畫面"></div>
+        <div>
+          <h3>課堂網頁練習</h3>
+          <p>課堂中累積的練習集合，涵蓋表單、表格與基礎版面配置。</p>
+          <ul class="tags"><li>HTML</li><li>CSS</li><li>基礎練習</li></ul>
+          <a class="more" href="https://jennyyyyyyyyyy.github.io/Jennyyyyyyyyyy/" target="_blank" rel="noopener noreferrer">瞭解更多</a>
+        </div>
+      </article>
+
+      <!-- 作品 3 -->
+      <article class="work">
+        <div class="ph" data-label="Figma UI 設計"><img src="images/figma.png" alt="註冊與登入頁面 UI 設計稿"></div>
+        <div>
+          <h3>註冊／登入頁面 UI 設計</h3>
+          <p>自學作品。以 Figma 製作註冊與登入流程的介面設計與互動原型。</p>
+          <ul class="tags"><li>Figma</li><li>UI 設計</li><li>互動原型</li></ul>
+          <a class="more" href="https://reurl.cc/Rk6dlZ" target="_blank" rel="noopener noreferrer">瞭解更多</a>
+        </div>
+      </article>
+    </section>
+
+    <!-- 3. 技能展示區塊（#skills） -->
+    <section class="sec" id="skills">
+      <div class="sec-head"><h2>技能</h2><p>依熟練度標示</p></div>
+      <div class="skills">
+        
+        <!-- 辦公應用 -->
+        <div>
+          <h3>辦公應用</h3>
+          <ul>
+            <!-- .dots 中的 <i class="on"> 代表點亮顆數，用於標示熟練度級別 -->
+            <li><span class="name">Excel</span><span class="dots"><i class="on"></i><i class="on"></i><i></i></span>
+              <span class="desc">基本函數、樞紐分析與圖表製作，可用於資料整理與簡易分析。</span></li>
+            <li><span class="name">PowerPoint / Canva</span><span class="dots"><i class="on"></i><i class="on"></i><i></i></span>
+              <span class="desc">簡報製作，習慣以 Canva 設計版面提升視覺呈現。</span></li>
+            <li><span class="name">Word</span><span class="dots"><i class="on"></i><i class="on"></i><i></i></span>
+              <span class="desc">文書處理，工讀與課堂報告皆有使用經驗。</span></li>
+            <li><span class="name">中文打字</span><span class="dots"><i class="on"></i><i class="on"></i><i></i></span>
+              <span class="desc">每分鐘 35 字。</span></li>
+            <li><span class="name">英文打字</span><span class="dots"><i class="on"></i><i></i><i></i></span>
+              <span class="desc">每分鐘 18 字。</span></li>
+          </ul>
+        </div>
+
+        <!-- 程式與設計 -->
+        <div>
+          <h3>程式與設計</h3>
+          <ul>
+            <li><span class="name">HTML</span><span class="dots"><i class="on"></i><i class="on"></i><i></i></span>
+              <span class="desc">熟悉基礎結構與表單、表格、內嵌內容等語法。</span></li>
+            <li><span class="name">CSS</span><span class="dots"><i class="on"></i><i class="on"></i><i></i></span>
+              <span class="desc">可進行簡單排版與樣式設定。</span></li>
+            <li><span class="name">Figma</span><span class="dots"><i class="on"></i><i class="on"></i><i></i></span>
+              <span class="desc">簡單 UI 介面設計與互動原型製作。</span></li>
+            <li><span class="name">Python</span><span class="dots"><i class="on"></i><i class="on"></i><i></i></span>
+              <span class="desc">變數、條件判斷、迴圈等基本語法，用於專題模型訓練。</span></li>
+            <li><span class="name">VS Code</span><span class="dots"><i class="on"></i><i class="on"></i><i></i></span>
+              <span class="desc">以 HTML/CSS 編輯網頁，有完整網站製作經驗。</span></li>
+          </ul>
+        </div>
+
+        <!-- AI 工具 -->
+        <div>
+          <h3>AI工具</h3>
+          <ul>
+            <li><span class="name">ChatGPT</span><span class="dots"><i class="on"></i><i class="on"></i><i></i></span></li>
+            <li><span class="name">Claude</span><span class="dots"><i class="on"></i><i class="on"></i><i></i></span></li>
+            <li><span class="name">Gemini</span><span class="dots"><i class="on"></i><i class="on"></i><i></i></span></li>
+            <li><span class="name">Perplexity AI</span><span class="dots"><i class="on"></i><i></i><i></i></span></li>
+          </ul>
+        </div>
       </div>
-    </article>
-  </section>
+      
+      <!-- 熟練度說明 -->
+      <p class="legend">● 一點為接觸過、兩點為可獨立完成、三點為能熟練應用</p>
+    </section>
 
-  <!-- 技能 -->
-  <section class="sec" id="skills">
-    <div class="sec-head"><h2>技能</h2><p>依熟練度標示</p></div>
-    <div class="skills">
-      <div>
-        <h3>辦公應用</h3>
-        <ul>
-          <li><span class="name">Excel</span><span class="dots"><i class="on"></i><i class="on"></i><i></i></span>
-            <span class="desc">基本函數、樞紐分析與圖表製作，可用於資料整理與簡易分析。</span></li>
-          <li><span class="name">PowerPoint / Canva</span><span class="dots"><i class="on"></i><i class="on"></i><i></i></span>
-            <span class="desc">簡報製作，習慣以 Canva 設計版面提升視覺呈現。</span></li>
-          <li><span class="name">Word</span><span class="dots"><i class="on"></i><i class="on"></i><i></i></span>
-            <span class="desc">文書處理，工讀與課堂報告皆有使用經驗。</span></li>
-          <li><span class="name">中文打字</span><span class="dots"><i class="on"></i><i class="on"></i><i></i></span>
-            <span class="desc">每分鐘 35 字。</span></li>
-          <li><span class="name">英文打字</span><span class="dots"><i class="on"></i><i></i><i></i></span>
-            <span class="desc">每分鐘 18 字。</span></li>
-        </ul>
+    <!-- 4. 證照區塊（#certs） -->
+    <section class="sec" id="certs">
+      <div class="sec-head"><h2>證照</h2><p>9 張，點擊可放大</p></div>
+      <div class="certs">
+        <!-- 證照按鈕：data-src 存放圖片網址、data-name 存放名稱，點擊時傳給 JS 開啟燈箱 -->
+        <button class="cert" data-src="images/乙級.jpg" data-name="乙級技術士">
+          <div class="ph" data-label="乙級"><img src="images/乙級.jpg" alt="乙級證照"></div><span>乙級技術士</span></button>
+        <button class="cert" data-src="images/網丙.jpg" data-name="網頁設計丙級">
+          <div class="ph" data-label="網丙"><img src="images/網丙.jpg" alt="網頁設計丙級證照"></div><span>網頁設計丙級</span></button>
+        <button class="cert" data-src="images/丙級.jpg" data-name="丙級技術士">
+          <div class="ph" data-label="丙級"><img src="images/丙級.jpg" alt="丙級證照"></div><span>丙級技術士</span></button>
+        <button class="cert" data-src="images/python.jpg" data-name="Python 認證">
+          <div class="ph" data-label="Python"><img src="images/python.jpg" alt="Python 認證"></div><span>Python 認證</span></button>
+        <button class="cert" data-src="images/Azure.jpg" data-name="Microsoft Azure">
+          <div class="ph" data-label="Azure"><img src="images/Azure.jpg" alt="Microsoft Azure 認證"></div><span>Microsoft Azure</span></button>
+        <button class="cert" data-src="images/SSE.jpg" data-name="SSE 認證">
+          <div class="ph" data-label="SSE"><img src="images/SSE.jpg" alt="SSE 認證"></div><span>SSE 認證</span></button>
+        <button class="cert" data-src="images/excel.jpg" data-name="Excel 認證">
+          <div class="ph" data-label="Excel"><img src="images/excel.jpg" alt="Excel 認證"></div><span>Excel 認證</span></button>
+        <button class="cert" data-src="images/中打.jpg" data-name="中文輸入">
+          <div class="ph" data-label="中打"><img src="images/中打.jpg" alt="中文輸入檢定證照"></div><span>中文輸入檢定</span></button>
+        <button class="cert" data-src="images/英打.jpg" data-name="英文輸入">
+          <div class="ph" data-label="英打"><img src="images/英打.jpg" alt="英文輸入檢定證照"></div><span>英文輸入檢定</span></button>
       </div>
-      <div>
-        <h3>程式與設計</h3>
-        <ul>
-          <li><span class="name">HTML</span><span class="dots"><i class="on"></i><i class="on"></i><i></i></span>
-            <span class="desc">熟悉基礎結構與表單、表格、內嵌內容等語法。</span></li>
-          <li><span class="name">CSS</span><span class="dots"><i class="on"></i><i class="on"></i><i></i></span>
-            <span class="desc">可進行簡單排版與樣式設定。</span></li>
-          <li><span class="name">Figma</span><span class="dots"><i class="on"></i><i class="on"></i><i></i></span>
-            <span class="desc">簡單 UI 介面設計與互動原型製作。</span></li>
-          <li><span class="name">Python</span><span class="dots"><i class="on"></i><i class="on"></i><i></i></span>
-            <span class="desc">變數、條件判斷、迴圈等基本語法，用於專題模型訓練。</span></li>
-          <li><span class="name">VS Code</span><span class="dots"><i class="on"></i><i class="on"></i><i></i></span>
-            <span class="desc">以 HTML/CSS 編輯網頁，有完整網站製作經驗。</span></li>
-        </ul>
+    </section>
+
+    <!-- 5. 專案成就 / 畢業專題（#project） -->
+    <section class="sec" id="project">
+      <div class="sec-head"><h2>專案成就</h2><p>畢業專題</p></div>
+      <div class="proj">
+        <div class="ph" data-label="智能辨識存錢筒"><img src="images/專題製作.jpg" alt="智能辨識存錢筒成品照"></div>
+        <div>
+          <h3>智能辨識存錢筒</h3>
+          <p class="when">2024.03 – 2025.03｜影像辨識與硬體整合</p>
+          
+          <!-- 專案重點與執行步驟說明清單 -->
+          <ol>
+            <li>以 Jetson Nano 作為邊緣運算平台，開發即時影像辨識功能。</li>
+            <li>蒐集與標註台幣、日幣硬幣資料，以 YOLOv5 + PyTorch 完成模型訓練。</li>
+            <li>使用 OpenCV 進行影像前處理，提升辨識效率與準確率。</li>
+            <li>以 CUDA / cuDNN 加速 GPU 推論，實現低延遲即時辨識。</li>
+            <li>串接 Firebase，讓辨識結果即時上傳並與 App 同步。</li>
+            <li>控制伺服馬達設計硬幣投入開關機構，提升互動體驗。</li>
+          </ol>
+
+          <!-- 關鍵技術標籤集（Chips） -->
+          <ul class="chips"><li>Jetson Nano</li><li>YOLOv5</li><li>PyTorch</li><li>OpenCV</li><li>CUDA / cuDNN</li><li>Firebase</li><li>伺服馬達</li></ul>
+        </div>
       </div>
-      <div>
-        <h3>AI工具</h3>
-        <ul>
-          <li><span class="name">ChatGPT</span><span class="dots"><i class="on"></i><i class="on"></i><i></i></span>
-          <li><span class="name">Claude</span><span class="dots"><i class="on"></i><i class="on"></i><i></i></span>
-          <li><span class="name">Gemini</span><span class="dots"><i class="on"></i><i class="on"></i><i></i></span>
-          <li><span class="name">Perplexity AI</span><span class="dots"><i class="on"></i><i></i><i></i></span>
+    </section>
+
+    <!-- 6. 聯絡我區塊（#contact） -->
+    <section class="sec contact" id="contact">
+      <div class="sec-head"><h2>聯絡我</h2></div>
+      <a class="mail" href="mailto:yk1040445@gmail.com">yk1040445@gmail.com</a>
+      <div class="links">
+        <a href="https://github.com/Jennyyyyyyyyyy" target="_blank">GitHub</a>
       </div>
-    </div>
-    <p class="legend">● 一點為接觸過、兩點為可獨立完成、三點為能熟練應用</p>
-  </section>
+    </section>
 
-  <!-- 證照 -->
-  <section class="sec" id="certs">
-    <div class="sec-head"><h2>證照</h2><p>9 張，點擊可放大</p></div>
-    <div class="certs">
-      <!-- 建議把下面的 span 換成完整證照名稱與發證單位，例如「網頁設計丙級｜勞動部」 -->
-      <button class="cert" data-src="images/乙級.jpg" data-name="乙級技術士">
-        <div class="ph" data-label="乙級"><img src="images/乙級.jpg" alt="乙級證照"></div><span>乙級技術士</span></button>
-      <button class="cert" data-src="images/網丙.jpg" data-name="網頁設計丙級">
-        <div class="ph" data-label="網丙"><img src="images/網丙.jpg" alt="網頁設計丙級證照"></div><span>網頁設計丙級</span></button>
-      <button class="cert" data-src="images/丙級.jpg" data-name="丙級技術士">
-        <div class="ph" data-label="丙級"><img src="images/丙級.jpg" alt="丙級證照"></div><span>丙級技術士</span></button>
-      <button class="cert" data-src="images/python.jpg" data-name="Python 認證">
-        <div class="ph" data-label="Python"><img src="images/python.jpg" alt="Python 認證"></div><span>Python 認證</span></button>
-      <button class="cert" data-src="images/Azure.jpg" data-name="Microsoft Azure">
-        <div class="ph" data-label="Azure"><img src="images/Azure.jpg" alt="Microsoft Azure 認證"></div><span>Microsoft Azure</span></button>
-      <button class="cert" data-src="images/SSE.jpg" data-name="SSE 認證">
-        <div class="ph" data-label="SSE"><img src="images/SSE.jpg" alt="SSE 認證"></div><span>SSE 認證</span></button>
-      <button class="cert" data-src="images/excel.jpg" data-name="Excel 認證">
-        <div class="ph" data-label="Excel"><img src="images/excel.jpg" alt="Excel 認證"></div><span>Excel 認證</span></button>
-      <button class="cert" data-src="images/中打.jpg" data-name="中文輸入">
-        <div class="ph" data-label="中打"><img src="images/中打.jpg" alt="中文輸入檢定證照"></div><span>中文輸入檢定</span></button>
-      <button class="cert" data-src="images/英打.jpg" data-name="英文輸入">
-        <div class="ph" data-label="英打"><img src="images/英打.jpg" alt="英文輸入檢定證照"></div><span>英文輸入檢定</span></button>
-    </div>
-  </section>
-
-  <!-- 專案 -->
-  <section class="sec" id="project">
-    <div class="sec-head"><h2>專案成就</h2><p>畢業專題</p></div>
-    <div class="proj">
-      <div class="ph" data-label="智能辨識存錢筒"><img src="images/專題製作.jpg" alt="智能辨識存錢筒成品照"></div>
-      <div>
-        <h3>智能辨識存錢筒</h3>
-        <p class="when">2024.03 – 2025.03｜影像辨識與硬體整合</p>
-        <ol>
-          <li>以 Jetson Nano 作為邊緣運算平台，開發即時影像辨識功能。</li>
-          <li>蒐集與標註台幣、日幣硬幣資料，以 YOLOv5 + PyTorch 完成模型訓練。</li>
-          <li>使用 OpenCV 進行影像前處理，提升辨識效率與準確率。</li>
-          <li>以 CUDA / cuDNN 加速 GPU 推論，實現低延遲即時辨識。</li>
-          <li>串接 Firebase，讓辨識結果即時上傳並與 App 同步。</li>
-          <li>控制伺服馬達設計硬幣投入開關機構，提升互動體驗。</li>
-        </ol>
-        <ul class="chips"><li>Jetson Nano</li><li>YOLOv5</li><li>PyTorch</li><li>OpenCV</li><li>CUDA / cuDNN</li><li>Firebase</li><li>伺服馬達</li></ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- 聯絡 -->
-  <section class="sec contact" id="contact">
-    <div class="sec-head"><h2>聯絡我</h2></div>
-    <a class="mail" href="mailto:your.email@example.com">yk1040445@gmail.com</a>
-    <div class="links">
-      <a href="https://github.com/jennyyyyyyyyyy">GitHub</a>
-    </div>
-  </section>
-
-  <footer>Copyright © 2026 林孝臻 All Rights Reserved.</footer>
+    <!-- 頁尾宣告區塊 -->
+    <footer>Copyright © 2026 林孝臻 All Rights Reserved.</footer>
+  </div>
 </div>
-</div>
 
+<!-- 圖片放大燈箱彈窗 (原生 HTML5 <dialog> 標籤) -->
 <dialog class="box" id="box">
   <div class="inner-box">
-    <div class="ph" id="boxPh" data-label="證照圖片"><img id="boxImg" src="" alt=""></div>
+    <div class="ph" id="boxPh" data-label="圖片預覽"><img id="boxImg" src="" alt=""></div>
     <p id="boxCap"></p>
     <button class="close" id="boxClose">關閉</button>
   </div>
 </dialog>
 
+<!-- JavaScript 腳本：含逐行詳細註解 -->
 <script>
-// 圖片載入失敗時顯示替代底（本機預覽時常見）
-function markFail(img){
-  var ph = img.closest('.ph');
-  if (ph) ph.setAttribute('data-fail','1');
-}
-document.querySelectorAll('.ph img').forEach(function(img){
-  img.addEventListener('error', function(){ markFail(img); });
-  if (img.complete && img.naturalWidth === 0) markFail(img);
-});
+  // ==========================================
+  // 1. 圖片讀取失敗防護處理（Image Error Handling）
+  // ==========================================
+  
+  // 定義一個函式 handleImageError，接收觸發錯誤的圖片元素 (img) 作為參數
+  function handleImageError(img) {
+    // 透過 closest('.ph') 向上尋找離該圖片最近且 class 為 "ph" 的外層容器元件
+    const parentContainer = img.closest('.ph');
+    
+    // 判斷是否有成功找到外層容器（確保容器存在）
+    if (parentContainer) {
+      // 為該外層容器新增自訂屬性 data-fail="1"，供 CSS 樣式捕獲並顯示預設備用圖文
+      parentContainer.setAttribute('data-fail', '1');
+    }
+  }
 
-// 證照燈箱
-var box = document.getElementById('box'),
-    boxImg = document.getElementById('boxImg'),
-    boxPh = document.getElementById('boxPh'),
-    boxCap = document.getElementById('boxCap');
+  // 透過 querySelectorAll 搜尋頁面上所有 class 為 ph 裡面的 <img> 元素，回傳 NodeList 集合
+  const allImages = document.querySelectorAll('.ph img');
 
-document.querySelectorAll('.cert').forEach(function(btn){
-  btn.addEventListener('click', function(){
-    var name = btn.dataset.name;
-    boxPh.removeAttribute('data-fail');
-    boxPh.setAttribute('data-label', name);
-    boxImg.src = btn.dataset.src;
-    boxImg.alt = name + ' 證照';
-    boxCap.textContent = name;
-    if (typeof box.showModal === 'function') box.showModal();
+  // 使用 forEach 迴圈遍歷陣列中的每一個圖片元素
+  allImages.forEach(function(img) {
+    // 為當前圖片綁定 'error' 事件監聽器（當圖片路徑錯誤、404 或下載失敗時觸發）
+    img.addEventListener('error', function() {
+      // 圖片載入失敗時，呼叫 handleImageError 函式並傳入該圖片元素
+      handleImageError(img);
+    });
+    
+    // 檢查快取/載入狀態：若圖片已經下載完成 (.complete) 且自然寬度為 0 (代表破圖或無內容)
+    if (img.complete && img.naturalWidth === 0) {
+      // 立即觸發圖片失敗處理函式
+      handleImageError(img);
+    }
   });
-});
-boxImg.addEventListener('error', function(){ markFail(boxImg); });
-document.getElementById('boxClose').addEventListener('click', function(){ box.close(); });
-box.addEventListener('click', function(e){ if (e.target === box) box.close(); });
+
+
+  // ==========================================
+  // 2. 燈箱彈窗放大顯示邏輯（Modal / Lightbox Logic）
+  // ==========================================
+  
+  // 取得頁面中 id 為 "box" 的 <dialog> 燈箱對話框元素
+  const modalBox = document.getElementById('box');
+
+  // 取得燈箱內用於顯示大圖的 <img> 元素 (id="boxImg")
+  const modalImg = document.getElementById('boxImg');
+
+  // 取得燈箱內包裹大圖的外層容器元素 (id="boxPh")
+  const modalPh = document.getElementById('boxPh');
+
+  // 取得燈箱內用於顯示圖片名稱/標題的 <p> 說明文字元素 (id="boxCap")
+  const modalCaption = document.getElementById('boxCap');
+
+  // 取得燈箱內的「關閉」按鈕元素 (id="boxClose")
+  const closeButton = document.getElementById('boxClose');
+
+  // 定義開啟燈箱的通用函式 openModal，接收圖片網址 (src) 與標題 (name) 兩個參數
+  function openModal(src, name) {
+    // 移除之前可能設定過的 data-fail 屬性，確保新圖片能正常顯示
+    modalPh.removeAttribute('data-fail');
+    
+    // 將容器的 data-label 屬性更新為當前的圖片名稱
+    modalPh.setAttribute('data-label', name);
+    
+    // 替換燈箱圖片的來源網址 (src)
+    modalImg.src = src;
+    
+    // 替換燈箱圖片的無障礙替代文字 (alt)
+    modalImg.alt = name + ' 放大圖';
+    
+    // 更新燈箱下方顯示的文字標題內容
+    modalCaption.textContent = name;
+
+    // 檢查瀏覽器是否支援 HTML5 原生 dialog 的 showModal 函式
+    if (typeof modalBox.showModal === 'function') {
+      // 呼叫原生 API 以模態對話框（帶有背景遮罩）形式開啟燈箱
+      modalBox.showModal();
+    }
+  }
+
+  // 取得頁面上所有 class 為 "cert" 的證照按鈕集合
+  const certButtons = document.querySelectorAll('.cert');
+
+  // 遍歷每一個證照按鈕
+  certButtons.forEach(function(button) {
+    // 為證照按鈕綁定 'click' 點擊事件
+    button.addEventListener('click', function() {
+      // 點擊時呼叫 openModal，並透過 HTML5 dataset 讀取按鈕上的 data-src 與 data-name 屬性
+      openModal(button.dataset.src, button.dataset.name);
+    });
+  });
+
+  // 取得專案區塊 (.proj) 裡面的圖片容器 (.ph)
+  const projPh = document.querySelector('.proj .ph');
+
+  // 判斷專案圖片容器是否存在於當前頁面中
+  if (projPh) {
+    // 將專案圖片的滑鼠游標樣式改為手型 (pointer)，提示使用者可以點擊
+    projPh.style.cursor = 'pointer';
+    
+    // 為專案圖片容器綁定點擊事件
+    projPh.addEventListener('click', function() {
+      // 取得該容器內的 <img> 元素
+      const img = projPh.querySelector('img');
+      
+      // 取得容器上的 data-label 屬性，若沒有則預設為 '智能辨識存錢筒'
+      const label = projPh.getAttribute('data-label') || '智能辨識存錢筒';
+      
+      // 取得圖片 src，若 <img> 元素不存在則使用預設圖片路徑
+      const imgSrc = img ? img.src : 'images/專題製作.jpg';
+      
+      // 呼叫 openModal 開啟專案圖片燈箱
+      openModal(imgSrc, label);
+    });
+  }
+
+  // 為燈箱內的 <img> 元素綁定 'error' 事件，若放大圖載入失敗亦同步處理破圖
+  modalImg.addEventListener('error', function() {
+    handleImageError(modalImg);
+  });
+
+  // 為關閉按鈕綁定點擊事件
+  closeButton.addEventListener('click', function() {
+    // 呼叫 HTML5 dialog 原生的 close() 函式關閉燈箱
+    modalBox.close();
+  });
+
+  // 為燈箱主體綁定點擊事件，實作點擊遮罩背景關閉彈窗的功能
+  modalBox.addEventListener('click', function(event) {
+    // 判斷點擊的目标 (event.target) 是否直接是 dialog 背景本身（而非裡面的內容框 inner-box）
+    if (event.target === modalBox) {
+      // 若點擊的是背景遮罩，則關閉燈箱
+      modalBox.close();
+    }
+  });
 </script>
+
 </body>
 </html>
